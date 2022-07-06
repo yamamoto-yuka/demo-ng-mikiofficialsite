@@ -1,0 +1,91 @@
+@import '../../styles.scss';
+.disc-container{
+  padding: 0 50px;
+}
+.headline{
+  font-size: 2.5rem;
+  text-align: center;
+}
+.disc-info{
+  padding: 10px 10px 30px 10px;
+}
+.disc-cover{
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .caption{
+    height: 100%;
+    @include centerCenter($j:space-evenly);
+    flex-direction: column;
+    p,h3{
+      color: white;
+    }
+    h3{
+      font-size: 1.2rem;
+    }
+   a{
+    font-size: .8rem;
+     color: white;
+    }
+    a:hover{
+     color: white;
+    }
+  }
+  .mask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(50, 132, 108, 0.777);
+    transition: all 0.5s ease-in-out;
+  }
+}
+.disc-info:hover .mask,
+.disc-info:active .mask{
+  opacity: 1;
+}
+
+.disc-cover:last-child{
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .disc-cover{
+    .caption{
+      p{
+        font-size: .8rem;
+      }
+      h3{
+        font-size: 1rem;
+      }
+      button{
+        margin-top: 10px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 30px;
+        font-size: .6rem;
+        color: white;
+        background-color: $hover;
+      }
+      button:hover{
+        @include hover($color:white);
+        background-color: #033f48;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .disc-container{
+    padding: 0 150px ;
+  }
+}
+
+

@@ -1,0 +1,62 @@
+<loading></loading>
+<app-header [livePage]="true"></app-header>
+<div class="container">
+  <h1 class="headline">Live</h1>
+  <div #liveContainer>
+    <div *ngFor="let live of liveInfo" class="liveContainer">
+      <div class="live-banner">
+        <img
+          [src]="live.banner"
+          [alt]="live.alt"
+        />
+      </div>
+      <div class="live-info">
+        <h3>{{ live.date }}</h3>
+        <p class="title">{{ live.title }}</p>
+        <p class="time">{{ live.time }}</p>
+        <p class="price">{{ live.price }}</p>
+      </div>
+      <div class="link">
+        <a href="{{ live.link }}"
+          ><i class="fa-solid fa-circle-arrow-right"></i>
+          {{ live.linkName }}</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer [bgimg]="liveBg"></app-footer>
+
+
+
+<!-- For strapi -->
+<!-- <loading></loading>
+<app-header [livePage]="true"></app-header>
+<div class="container">
+  <h1 class="headline">Live</h1>
+  <div #liveContainer>
+    <div *ngFor="let live of liveInfo | reverse" class="liveContainer">
+      <div class="live-banner">
+        <img
+          [src]="
+            host + live.attributes.img.data[0].attributes.formats.large.url
+          "
+          [alt]="live.alt"
+        />
+      </div>
+      <div class="live-info">
+        <h3>{{ live.attributes.date }}</h3>
+        <p class="title">{{ live.attributes.title }}</p>
+        <p class="time">{{ live.attributes.time }}</p>
+        <p class="price">{{ live.attributes.price }}</p>
+      </div>
+      <div class="link">
+        <a href="{{ live.attributes.link }}"
+          ><i class="fa-solid fa-circle-arrow-right"></i>
+          {{ live.attributes.linkname }}</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer [bgimg]="liveBg"></app-footer> -->

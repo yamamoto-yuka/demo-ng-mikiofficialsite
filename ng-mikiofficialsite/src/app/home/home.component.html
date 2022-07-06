@@ -1,0 +1,182 @@
+<loading></loading>
+<app-header></app-header>
+<div #container class="container">
+  <div
+    id="carouselExampleControls"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div
+        class="carousel-item"
+        [class.active]="i === 0"
+        *ngFor="let banner of banners; let i = index"
+      >
+        <a [href]="banner.url"
+          ><img
+            [src]="
+               banner.img
+            "
+            class="d-block w-100"
+            [alt]="banner.alt"
+        /></a>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleControls"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleControls"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div #live class="home-liveinfo">
+    <h2 class="headline">Live</h2>
+    <div class="wrapper">
+      <p>
+        {{ liveinfo.date }}<br />{{ liveinfo.title
+        }}<br />{{ liveinfo.desc }}
+      </p>
+      <a [href]="liveinfo.link">{{ liveinfo.btnname }}</a>
+      <!-- <i class="fa-solid fa-circle-arrow-right"></i> -->
+    </div>
+  </div>
+  <div class="video">
+    <h2 #videoHeadline class="headline">Video</h2>
+    <div class="wrapper">
+      <div #firstVideo class="videoContainer">
+        <div>
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/bg-8H5LiWGY"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p>春の歌/スピッツ(Cover)</p>
+      </div>
+      <div #secondVideo class="videoContainer">
+        <div>
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/Vwr9yr86j80"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p>おまじない/美稀</p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+
+
+
+<!-- For strapi -->
+<!-- <loading></loading>
+<app-header></app-header>
+<div #container class="container">
+  <div
+    id="carouselExampleControls"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div
+        class="carousel-item"
+        [class.active]="i === 0"
+        *ngFor="let banner of banners; let i = index"
+      >
+        <a [href]="banner.attributes.url"
+          ><img
+            [src]="
+              host + banner.attributes.img.data[0].attributes.formats.large.url
+            "
+            class="d-block w-100"
+            [alt]="banner.attributes.alt"
+        /></a>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleControls"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleControls"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div #live class="home-liveinfo">
+    <h2 class="headline">Live</h2>
+    <div class="wrapper">
+      <p>
+        {{ liveinfo.attributes.date }}<br />{{ liveinfo.attributes.title
+        }}<br />{{ liveinfo.attributes.desc }}
+      </p>
+      <a [href]="liveinfo.attributes.link">{{ liveinfo.attributes.btnname }}</a>
+    </div>
+  </div>
+  <div class="video">
+    <h2 #videoHeadline class="headline">Video</h2>
+    <div class="wrapper">
+      <div #firstVideo class="videoContainer">
+        <div>
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/bg-8H5LiWGY"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p>春の歌/スピッツ(Cover)</p>
+      </div>
+      <div #secondVideo class="videoContainer">
+        <div>
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/Vwr9yr86j80"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p>おまじない/美稀</p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer> -->
+

@@ -1,0 +1,233 @@
+@import '../../styles.scss';
+
+
+header {
+  height: 20vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: white;
+}
+.header-inner {
+  @include centerCenter($j: space-around);
+  height: 100%;
+  position: relative;
+  padding: 0 30px;
+}
+
+.header-title{
+  height: 50%;
+  margin-bottom: 0;
+  padding-top: 15px;
+#logo {
+  height: 3.5rem;
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+  svg:hover,
+  svg:active {
+    @include hover($translateY: -20%);
+  }
+}
+}
+
+.social-items {
+  height: 50%;
+  margin-bottom: 0;
+  @include centerCenter($j: flex-start);
+  .social-item {
+    margin-right: 35px;
+  }
+  .social-item:last-child {
+    margin-right: 0;
+  }
+  a {
+    font-size: 1.6rem;
+    color: $text;
+  }
+  i:hover,
+  i:active {
+    @include hover();
+  }
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  transform: translateX(100%);
+  transition: all 0.5s ease-in-out;
+  .nav-items {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+  }
+  a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: $text;
+    font-family: "Caveat", sans-serif;
+  }
+  a:hover,
+  a:active {
+    @include hover($translateY: 0);
+  }
+}
+nav.active {
+  transform: translateX(0);
+  background-color: white;
+}
+.livetext,
+.discpage,
+.contactpage,
+.biopage{
+  font-weight: bold;
+}
+.livetext{
+  color: #dbedea !important;
+}
+.disctext{
+  color: #feeec6 !important;
+}
+.contacttext{
+  color: #f9dfd6 !important;
+}
+.biotext{
+  color: #c9cbeb !important;
+}
+// .goodspage{
+//   color: #dbedea !important;
+// }
+
+
+.hamburger {
+  @include centerCenter($j: flex-end);
+  button {
+    width: 30px;
+    height: 100%;
+    background: transparent;
+    border-color: transparent;
+    z-index: 1000;
+    span {
+      width: 100%;
+      height: 3px;
+      background-color: $text;
+      position: relative;
+      display: block;
+    }
+    span:nth-child(1) {
+      top: 0;
+    }
+    span:nth-child(2) {
+      margin: 8px 0;
+    }
+    span:nth-child(3) {
+      top: 0;
+    }
+  }
+}
+.hamburger {
+  height: 50%;
+  button.active {
+    span {
+      transition: all 0.5s ease-in-out;
+    }
+    span:nth-child(1) {
+      top: 5px;
+      transform: rotate(45deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      top: -17px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-inner {
+    padding: 0 80px;
+  }
+}
+
+
+
+@media screen and (min-width: 1024px) {
+  .header-inner {
+    padding: 0 100px;
+  }
+  nav {
+    position: static;
+    transform: initial;
+    height: 50%;
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    .nav-items {
+      width: 70%;
+      @include centerCenter($j: space-around);
+      margin-bottom: 0;
+      position: inherit;
+      top: 0;
+      left: 0;
+      transform: translate(0, 0);
+      a {
+        margin-bottom: 0;
+        font-size: 1.5rem;
+      }
+      a:hover,
+      a:active {
+        @include hover($translateY: -20%);
+        font-weight: bold;
+      }
+    }
+  }
+  .hamburger {
+    display: none;
+  }
+
+  .livepage,
+  .discpage,
+  .contactpage,
+  .biopage
+  {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  .livepage{
+    background-color: #dbedea !important;
+  }
+  .discpage{
+    background-color: #feeec6 !important;
+  }
+  .contactpage{
+    background-color: #f9dfd6 !important;
+  }
+  .biopage{
+    background-color: #c9cbeb !important;
+  }
+  .livetext,
+  .disctext,
+  .contacttext,
+  .biotext{
+    color: white !important;
+  }
+
+}
+
+

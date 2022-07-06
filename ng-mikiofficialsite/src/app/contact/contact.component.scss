@@ -1,0 +1,62 @@
+@import "../../styles.scss";
+
+.headline {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+  .required{
+    font-size: .8rem;
+    color: red;
+  }
+
+label {
+  font-size: 0.8rem;
+  color: $text;
+}
+label::after{
+  content: " *";
+  color: red;
+}
+
+input {
+  padding: 8px 0;
+  font-size: 0.8rem;
+}
+.contact-submit {
+  width: 100%;
+  @include centerCenter();
+}
+button,
+button:hover,
+button:active {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: $hover;
+  color: white;
+}
+button:hover {
+  background-color: #016f80;
+}
+
+button:active {
+  background-color: #01515d;
+}
+
+@media screen and (min-width: 768px) {
+  .name {
+    width: 30%;
+  }
+  .email,
+  .subject {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}

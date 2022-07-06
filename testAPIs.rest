@@ -1,0 +1,24 @@
+GET http://localhost:1337/api/banners?populate=*
+
+###
+GET http://localhost:1337/api/homeliveinfo
+
+###
+GET http://localhost:1337/api/discographies?populate=*
+
+###
+GET http://localhost:1337/api/lives?populate=*
+
+###
+POST http://localhost:1337/api/contacts
+Content-Type: application/json
+
+{
+  "data":
+  {
+  "name":"test",
+  "email":"test@c.com",
+  "subject":"test",
+  "content":"testtest"
+  }
+}

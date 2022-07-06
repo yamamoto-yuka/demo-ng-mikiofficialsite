@@ -1,0 +1,16 @@
+@import "../../styles.scss";
+.confirm-desc {
+  padding-top: 30%;
+  width: 100%;
+  @include centerCenter();
+}
+@media screen and (min-width: 768px) {
+  .confirm-desc {
+    padding-top: 30%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .confirm-desc {
+    padding-top: 10%;
+  }
+}

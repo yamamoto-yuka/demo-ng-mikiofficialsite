@@ -1,0 +1,53 @@
+@import '../../styles.scss';
+
+#loading{
+  @include centerCenter();
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left:0;
+  z-index: 2000;
+  background-color: white;
+  overflow: hidden;
+}
+.overlay{
+  height:100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.737);
+  animation:loadingAnimation 6s linear infinite ;
+  z-index: 2001;
+}
+
+.loader
+{
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('../../assets/loading/美稀_logos.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+
+}
+
+@keyframes loadingAnimation {
+  0%{
+    bottom: 0;
+  }
+  100%{
+    bottom: 100%;
+  }
+}
+
+
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}

@@ -1,0 +1,107 @@
+<loading></loading>
+<app-header [contactPage]="true"></app-header>
+<div class="container">
+  <div class="headline">
+    <h1>Contact</h1>
+  </div>
+  <div class="contact-desc">
+    <p>
+      ブッキングなどお仕事のご依頼／お問い合わせがございましたら、こちらのフォームからお送りください。
+    </p>
+    <p class="required">*は必須項目です。</p>
+  </div>
+  <form #form="ngForm" (ngSubmit)="submit(name_, email_, subject_, content_)">
+    <div class="mb-3">
+      <label for="name" class="form-label">お名前</label>
+      <input
+        name="name"
+        #name_="ngModel"
+        [(ngModel)]="name"
+        id="name"
+        type="text"
+        class="form-control name"
+        required
+        placeholder="お名前"
+        minlength="1"
+      />
+    </div>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="name_.touched && name_.invalid"
+    >
+      エラー: 入力されていません。
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">メールアドレス</label>
+      <input
+        name="email"
+        #email_="ngModel"
+        [(ngModel)]="email"
+        id="email"
+        type="text"
+        class="form-control email"
+        required
+        placeholder="メールアドレス"
+        minlength="1"
+        pattern="^[^s@]+@[^s@]+.[^s@]{2,}$"
+      />
+    </div>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="email_.touched && email_.invalid"
+    >
+      エラー:有効なメールアドレスを入力してください。
+    </div>
+    <div class="mb-3">
+      <label for="subject" class="form-label">お問合せ案件</label>
+      <input
+        name="subject"
+        #subject_="ngModel"
+        [(ngModel)]="subject"
+        id="subject"
+        type="text"
+        class="form-control subject"
+        required
+        placeholder="お問合せ案件"
+        minlength="1"
+        maxlength="30"
+      />
+    </div>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="subject_.touched && subject_.invalid"
+    >
+      エラー:入力されていません。
+    </div>
+    <div class="mb-3">
+      <label for="content" class="form-label">お問合せ内容</label>
+      <textarea
+        name="content"
+        #content_="ngModel"
+        [(ngModel)]="content"
+        id="content"
+        class="form-control content"
+        required
+        minlength="1"
+        maxlength="1000"
+        cols="10"
+        rows="5"
+      >
+      </textarea>
+    </div>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="content_.touched && content_.invalid"
+    >
+      エラー:入力されていません。
+    </div>
+    <div class="contact-submit">
+      <button type="submit" class="btn" [disabled]="form.invalid">送信</button>
+    </div>
+  </form>
+</div>
+<app-footer [bgimg]="contactBg"></app-footer>

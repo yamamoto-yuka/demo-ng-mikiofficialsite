@@ -1,0 +1,58 @@
+$text: #6d6d6d;
+$hover: #03a2bc;
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+@mixin centerCenter($j: center, $a: center) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+}
+@mixin hover($color:$hover, $translateY: -50%) {
+  color: $color;
+  transform: translateY($translateY);
+  transition: all 0.5s ease-in-out;
+}
+
+
+// Base
+*{
+  // margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrap {
+ height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  @include hover();
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+
+h2,
+h3,
+p,
+a {
+  color: $text;
+  font-family: "Noto+Sans+JP", sans-serif;
+}
+
+.container{
+  padding: 25vh 20px 0 20px;
+}
+
+.headline {
+  margin-bottom: 50px;
+  font-size: 3.5rem;
+  color: $text;
+  font-family: "Caveat", sans-serif;
+}
