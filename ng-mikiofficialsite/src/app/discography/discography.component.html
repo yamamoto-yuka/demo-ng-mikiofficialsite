@@ -12,6 +12,81 @@
       <div class="disc-cover">
         <img
           [src]="
+            discography.img
+          "
+        />
+        <div class="mask">
+          <div class="caption">
+            <p>{{ discography.type }}</p>
+            <h3>{{ discography.title }}</h3>
+            <a [href]="discography.url" target="_blank"
+              ><i class="fa-solid fa-circle-arrow-right"></i> EGGSで聴く</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4 disc-info">
+      <div class="disc-cover">
+        <img
+          src="../../assets/cover/美稀_LiveTracks1.png"
+          alt="美稀_CD_LiveTracks1"
+        />
+        <div class="mask">
+          <div class="caption">
+            <p>CD</p>
+            <h3>美稀 Live Tracks</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4 disc-info">
+      <div class="disc-cover">
+        <img
+          src="../../assets/cover/美稀_LIveTracksVol2.png"
+          alt="美稀_CD_LIveTracksVol2"
+        />
+        <div class="mask">
+          <div class="caption">
+            <p>CD</p>
+            <h3>美稀 LIve Tracks Vol2</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4 disc-info">
+      <div class="disc-cover">
+        <img
+          src="../../assets/cover/美稀_人魚姫は見つからない.png"
+          alt="美稀_CD_息をする"
+        />
+        <div class="mask">
+          <div class="caption">
+            <p>CD</p>
+            <h3>人魚姫は見つからない</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer [bgimg]="discBg"></app-footer>
+
+
+<!-- <loading></loading>
+<app-header [discPage]="true"></app-header>
+<div class="container">
+  <div class="headline">
+    <h1>Discography</h1>
+  </div>
+  <div class="row disc-container">
+    <div
+      class="col-sm-12 col-md-4 disc-info"
+      *ngFor="let discography of discographies | reverse"
+    >
+      <div class="disc-cover">
+        <img
+          [src]="
             host +
             discography.attributes.img.data[0].attributes.formats.small.url
           "
@@ -71,4 +146,4 @@
     </div>
   </div>
 </div>
-<app-footer [bgimg]="discBg"></app-footer>
+<app-footer [bgimg]="discBg"></app-footer> -->
