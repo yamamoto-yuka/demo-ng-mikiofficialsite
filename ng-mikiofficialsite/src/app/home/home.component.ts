@@ -20,13 +20,13 @@ export class HomeComponent implements OnInit {
     id:1,
     img:'../../assets/banner/CityLights_cover.png',
     alt:'miki_美稀_liveinfo_citylights_banner',
-    url:'#'
+    url:'https://miki-web.live/live'
   },
   {
     id:2,
     img:'../../assets/banner/おことばに甘えて.png',
     alt:'miki_美稀_liveinfo_onemanlove_banner',
-    url:'#'
+    url:'https://miki-web.live/live'
   },
   {
     id:3,
@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     id:4,
     img:'../../assets/banner/美稀.png',
     alt:'miki_美稀_banner',
-    url:'#'
+    url:'https://miki-web.live/bio'
   }]
 
   liveinfo:any ={
