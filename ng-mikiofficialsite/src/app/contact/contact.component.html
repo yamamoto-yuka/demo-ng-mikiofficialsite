@@ -1,5 +1,4 @@
-<loading></loading>
-<app-header [contactPage]="true"></app-header>
+<app-header></app-header>
 <div class="container">
   <div class="headline">
     <h1>Contact</h1>
@@ -99,9 +98,13 @@
     >
       エラー:入力されていません。
     </div>
+    <re-captcha
+    (resolved)="resolved($event)"
+    siteKey="6Le2PucgAAAAAFurFKiZQbacYvL3n8N8AiGKXyaR"
+  ></re-captcha>
     <div class="contact-submit">
-      <button type="submit" class="btn" [disabled]="form.invalid">送信</button>
+      <button type="submit" class="btn" [disabled]="form.invalid && formInValid">送信</button>
     </div>
   </form>
 </div>
-<app-footer [bgimg]="contactBg"></app-footer>
+<app-footer></app-footer>

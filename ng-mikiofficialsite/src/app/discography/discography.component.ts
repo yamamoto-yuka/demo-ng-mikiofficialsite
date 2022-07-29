@@ -7,7 +7,6 @@ import { CommonService } from '../services/common.service';
   styleUrls: ['./discography.component.scss']
 })
 export class DiscographyComponent implements OnInit {
-  discBg:string = '../../assets/footer/discography_bg.png';
   // discographies:any[] = [];
   host = "http://localhost:1337";
 

@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./confirm.component.scss'],
 })
 export class ConfirmComponent implements OnInit {
-  contactBg: string = '../../assets/footer/contact_bg.png';
   constructor() {}
 
   ngOnInit(): void {}

@@ -1,42 +1,46 @@
-@import '../../styles.scss';
-.disc-container{
+@import "../../styles.scss";
+.container {
+  padding-top: 3rem;
+}
+.disc-container {
   padding: 0 50px;
 }
-.headline{
+.headline {
   font-size: 2.5rem;
   text-align: center;
 }
-.disc-info{
+.disc-info {
   padding: 10px 10px 30px 10px;
 }
-.disc-cover{
+.disc-cover {
   height: 100%;
   position: relative;
   overflow: hidden;
-  img{
+  img {
     height: 100%;
     width: 100%;
     object-fit: cover;
   }
-  .caption{
+  .caption {
     height: 100%;
-    @include centerCenter($j:space-evenly);
+    @include centerCenter($j: space-evenly);
     flex-direction: column;
-    p,h3{
+    p,
+    h3 {
       color: white;
     }
-    h3{
+    h3 {
       font-size: 1.2rem;
     }
-   a{
-    font-size: .8rem;
-     color: white;
+    a {
+      font-size: 0.8rem;
+      color: white;
     }
-    a:hover{
-     color: white;
+    a:hover {
+      color: white;
     }
   }
-  .mask{
+  .mask {
     position: absolute;
     top: 0;
     left: 0;
@@ -48,34 +52,34 @@
   }
 }
 .disc-info:hover .mask,
-.disc-info:active .mask{
+.disc-info:active .mask {
   opacity: 1;
 }
 
-.disc-cover:last-child{
+.disc-cover:last-child {
   margin-bottom: 0;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .disc-cover{
-    .caption{
-      p{
-        font-size: .8rem;
+  .disc-cover {
+    .caption {
+      p {
+        font-size: 0.8rem;
       }
-      h3{
+      h3 {
         font-size: 1rem;
       }
-      button{
+      button {
         margin-top: 10px;
         padding: 10px 20px;
         border: none;
         border-radius: 30px;
-        font-size: .6rem;
+        font-size: 0.6rem;
         color: white;
         background-color: $hover;
       }
-      button:hover{
-        @include hover($color:white);
+      button:hover {
+        @include hover($color: white);
         background-color: #033f48;
       }
     }
@@ -83,9 +87,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .disc-container{
-    padding: 0 150px ;
+  .disc-container {
+    padding: 0 150px;
   }
 }
-
-

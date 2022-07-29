@@ -1,36 +1,4 @@
-<app-header [livePage]="true"></app-header>
-<div class="container">
-  <h1 class="headline">Live</h1>
-  <div #liveContainer>
-    <div *ngFor="let live of liveInfo" class="liveContainer">
-      <div class="live-banner">
-        <img
-          [src]="live.banner"
-          [alt]="live.alt"
-        />
-      </div>
-      <div class="live-info">
-        <h3>{{ live.date }}</h3>
-        <p class="title">{{ live.title }}</p>
-        <p class="time">{{ live.time }}</p>
-        <p class="price">{{ live.price }}</p>
-      </div>
-      <div class="link">
-        <a href="{{ live.link }}"
-          ><i class="fa-solid fa-circle-arrow-right"></i>
-          {{ live.linkName }}</a
-        >
-      </div>
-    </div>
-  </div>
-</div>
-<app-footer [bgimg]="liveBg"></app-footer>
-
-
-
-<!-- For strapi -->
-<!-- <loading></loading>
-<app-header [livePage]="true"></app-header>
+<app-header></app-header>
 <div class="container">
   <h1 class="headline">Live</h1>
   <div #liveContainer>
@@ -50,12 +18,9 @@
         <p class="price">{{ live.attributes.price }}</p>
       </div>
       <div class="link">
-        <a href="{{ live.attributes.link }}"
-          ><i class="fa-solid fa-circle-arrow-right"></i>
-          {{ live.attributes.linkname }}</a
-        >
+        <a class="link-btn" href="{{ live.attributes.link }}">詳細を見る</a>
       </div>
     </div>
   </div>
 </div>
-<app-footer [bgimg]="liveBg"></app-footer> -->
+<app-footer></app-footer>

@@ -1,5 +1,10 @@
 @import "../../styles.scss";
+
+.container{
+  min-height: 85vh;
+}
 .headline {
+  padding-top: 3rem;
   font-size: 2.5rem;
   text-align: center;
 }
@@ -16,21 +21,14 @@
     border: 1px solid #cccbcb;
   }
 }
-.live-info {
-  h3 {
-    margin: 30px 0 15px 0;
-    font-size: 1rem;
+.live-info{
+  .title {
+    padding-top: 3rem;
+    font-size: 1.5rem;
     font-weight: 700;
   }
-  .title,
-  .time,
-  .price {
-    font-size: 0.8rem;
-  }
-
   .time {
-    margin: 0;
-    font-size: 0.5rem;
+    font-size: .8rem;
   }
   .price {
     margin: 5px 0;
@@ -40,8 +38,21 @@
 .link {
   margin-top: 30px;
   @include centerCenter($j: flex-end);
-  a {
-    font-weight: 700;
+  .link-btn{
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    line-height: 100px;
+    border: 1px solid $green;
+    border-radius: 50%;
+    color: $white;
+    background-color: $green;
+    text-decoration: none;
+    text-align: center;
+    transition: all .3s ease-in-out;
+  }
+  .link-btn:hover{
+    transform: scale(1.1) rotate(-15deg);
   }
 }
 
@@ -55,11 +66,11 @@
   .live-info {
     width: 40%;
     padding-left: 10px;
-    h3 {
+    .title{
       margin: 0;
     }
-    .price {
-      margin: 5px 0 0 0;
+    .time{
+      margin: 1rem;
     }
   }
   .link {

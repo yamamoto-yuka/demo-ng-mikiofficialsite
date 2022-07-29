@@ -8,16 +8,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  contactBg:string = '../../assets/footer/contact_bg.png';
   name:string ='';
   email:string ='';
   subject:string ='';
   content:string = '';
+  formInValid= true;
   constructor(private cs:CommonService, private router:Router) { }
+
+  resolved(event:any){
+    console.log(event);
+    if(event){
+      this.formInValid = false;
+    }
+  }
+
 
   submit(name:any, email:any, subject:any, content:any){
     this.cs.postContact(this.name, this.email, this.subject, this.content).subscribe(contactData =>{
-      console.log(contactData);
+
       if(contactData.data){
         this.router.navigate(['/confirm']);
       }

@@ -1,233 +1,154 @@
-@import '../../styles.scss';
+@import "../../styles.scss";
 
+@keyframes showup {
+  from {
+    opacity: 0;
+    transform: rotate(-20deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
 
-header {
-  height: 20vh;
+ul{
+  padding: 0;
+}
+
+nav {
+  height: 15vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2.5rem;
+  z-index: 2;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.09);
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: flex-end;
+  img {
+    height: 100%;
+    width: 100%;
+    padding-right: 1rem;
+    object-fit: contain;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .logo:nth-child(1) {
+    animation: showup 1s linear;
+  }
+  .logo:nth-child(2) {
+    animation: showup 1.3s linear;
+  }
+  .logo:nth-child(3) {
+    animation: showup 1.6s linear;
+  }
+}
+.logo-wrap img:hover {
+  transform: translateY(-10px);
+}
+
+.hamburger {
+  width: 50px;
+  position: fixed;
+  top: 3%;
+  right: 5%;
+  transform: translateY(-3%);
+  z-index: 4;
+  cursor: pointer;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    transition: all 0.8s ease-in-out;
+  }
+}
+
+.hamburger img:hover {
+  transform: rotate(-45deg);
+}
+
+// active classes
+.hamburger.active {
+  position: fixed;
+  top: 10%;
+  right: 15%;
+  transform: rotate(-45deg);
+}
+
+.nav-links {
+  height: 100vh;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 999;
-  background-color: white;
-}
-.header-inner {
-  @include centerCenter($j: space-around);
-  height: 100%;
-  position: relative;
-  padding: 0 30px;
-}
-
-.header-title{
-  height: 50%;
-  margin-bottom: 0;
-  padding-top: 15px;
-#logo {
-  height: 2.5rem;
-  svg {
-    height: 100%;
-    width: 100%;
-  }
-  svg:hover,
-  svg:active {
-    @include hover($translateY: -20%);
-  }
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  clip-path: circle(10px at 90% -10%);
+  -webkit-clip-path: circle(10px at 90% -10%);
+  pointer-events: none;
+  text-align: center;
+  z-index: 3;
+  background-color: $green;
+  transition: all 1.5s ease-out;
 }
 
-.social-items {
-  height: 50%;
-  margin-bottom: 0;
-  @include centerCenter($j: flex-start);
-  .social-item {
-    margin-right: 35px;
-  }
-  .social-item:last-child {
-    margin-right: 0;
-  }
+.nav-links.open {
+  clip-path: circle(2000px at 90% -10%);
+  -webkit-clip-path: circle(2000px at 90% -10%);
+  pointer-events: all;
+}
+
+.page-links li {
+  margin-bottom: 2rem;
   a {
-    font-size: 1.6rem;
-    color: $text;
+    font-size: 1.8rem;
+    letter-spacing: 1.2px;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    color: $white;
+    transition: all 0.3s ease-out;
   }
-  i:hover,
-  i:active {
-    @include hover();
-  }
-}
-
-nav {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  transform: translateX(100%);
-  transition: all 0.5s ease-in-out;
-  .nav-items {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 0;
-  }
-  a {
-    width: 100%;
-    display: block;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: $text;
-    font-family: "Caveat", sans-serif;
-  }
-  a:hover,
-  a:active {
-    @include hover($translateY: 0);
-  }
-}
-nav.active {
-  transform: translateX(0);
-  background-color: white;
-}
-.livetext,
-.discpage,
-.contactpage,
-.biopage{
-  font-weight: bold;
-}
-.livetext{
-  color: #dbedea !important;
-}
-.disctext{
-  color: #feeec6 !important;
-}
-.contacttext{
-  color: #f9dfd6 !important;
-}
-.biotext{
-  color: #c9cbeb !important;
-}
-// .goodspage{
-//   color: #dbedea !important;
-// }
-
-
-.hamburger {
-  @include centerCenter($j: flex-end);
-  button {
-    width: 30px;
-    height: 100%;
-    background: transparent;
-    border-color: transparent;
-    z-index: 1000;
-    span {
-      width: 100%;
-      height: 3px;
-      background-color: $text;
-      position: relative;
-      display: block;
-    }
-    span:nth-child(1) {
-      top: 0;
-    }
-    span:nth-child(2) {
-      margin: 8px 0;
-    }
-    span:nth-child(3) {
-      top: 0;
-    }
-  }
-}
-.hamburger {
-  height: 50%;
-  button.active {
-    span {
-      transition: all 0.5s ease-in-out;
-    }
-    span:nth-child(1) {
-      top: 5px;
-      transform: rotate(45deg);
-    }
-    span:nth-child(2) {
-      opacity: 0;
-    }
-    span:nth-child(3) {
-      top: -17px;
-      transform: rotate(-45deg);
-    }
+  a:hover {
+    color: $Hgreen;
   }
 }
 
-@media screen and (min-width: 768px) {
-  .header-inner {
-    padding: 0 80px;
+.social-links {
+  display: flex;
+  li {
+    padding-right: 1rem;
+
+    svg {
+      height: 30px;
+      width: 30px;
+      fill: $white;
+      transition: all 0.3s ease-out;
+    }
+    svg:hover {
+      fill: $Hgreen;
+    }
+  }
+  li:last-child {
+    padding-right: 0;
   }
 }
-
-
 
 @media screen and (min-width: 1024px) {
-  .header-inner {
-    padding: 0 100px;
-  }
-  nav {
-    position: static;
-    transform: initial;
-    height: 50%;
-    display: flex;
-    justify-content: flex-end;
-    width: 50%;
-    .nav-items {
-      width: 70%;
-      @include centerCenter($j: space-around);
-      margin-bottom: 0;
-      position: inherit;
-      top: 0;
-      left: 0;
-      transform: translate(0, 0);
-      a {
-        margin-bottom: 0;
-        font-size: 1.5rem;
-      }
-      a:hover,
-      a:active {
-        @include hover($translateY: -20%);
-        font-weight: bold;
+  .social-links {
+    li {
+      padding-right: 2rem;
+      svg {
+        height: 35px;
+        width: 35px;
       }
     }
   }
-  .hamburger {
-    display: none;
-  }
-
-  .livepage,
-  .discpage,
-  .contactpage,
-  .biopage
-  {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-  }
-  .livepage{
-    background-color: #dbedea !important;
-  }
-  .discpage{
-    background-color: #feeec6 !important;
-  }
-  .contactpage{
-    background-color: #f9dfd6 !important;
-  }
-  .biopage{
-    background-color: #c9cbeb !important;
-  }
-  .livetext,
-  .disctext,
-  .contacttext,
-  .biotext{
-    color: white !important;
-  }
-
 }
-
-

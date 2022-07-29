@@ -1,28 +1,37 @@
 @import "../../styles.scss";
-
+.container{
+  padding: 3rem 5rem;
+}
 .headline {
   font-size: 2.5rem;
   text-align: center;
 }
 
-  .required{
-    font-size: .8rem;
-    color: red;
-  }
+.required {
+  font-size: 0.8rem;
+  color: #842029;
+}
 
 label {
   font-size: 0.8rem;
   color: $text;
 }
-label::after{
+label::after {
   content: " *";
-  color: red;
+  color: #842029;
 }
 
 input {
   padding: 8px 0;
   font-size: 0.8rem;
 }
+
+.alert {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
 .contact-submit {
   width: 100%;
   @include centerCenter();
@@ -33,15 +42,15 @@ button:active {
   padding: 15px 30px;
   border: none;
   border-radius: 15px;
-  background-color: $hover;
+  background-color: $Hgreen;
   color: white;
 }
 button:hover {
-  background-color: #016f80;
+  background-color: $green;
 }
 
 button:active {
-  background-color: #01515d;
+  background-color: $green;
 }
 
 @media screen and (min-width: 768px) {
@@ -55,8 +64,7 @@ button:active {
 }
 
 @media screen and (min-width: 1024px) {
-  .container {
-    padding-left: 100px;
-    padding-right: 100px;
+  .container{
+    padding: 3rem 15rem;
   }
 }
