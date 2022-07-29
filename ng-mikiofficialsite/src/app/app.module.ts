@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { InViewportModule } from 'ng-in-viewport';
 import { RecaptchaModule } from "ng-recaptcha";
 import { NgPipesModule } from 'ngx-pipes';
 import { HttpClientModule } from '@angular/common/http';
@@ -39,6 +40,7 @@ import { PrecontactComponent } from './precontact/precontact.component';
     HttpClientModule,
     NgPipesModule,
     RecaptchaModule,
+    InViewportModule
   ],
   providers: [],
   bootstrap: [AppComponent],

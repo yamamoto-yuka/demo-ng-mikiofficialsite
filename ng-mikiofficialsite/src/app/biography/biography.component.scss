@@ -2,7 +2,7 @@
 .container {
   @include centerCenter();
   flex-direction: column;
-  padding-top: 3rem;
+  padding: 3rem 4rem 0 4rem;
 }
 .headline {
   font-size: 2.5rem;

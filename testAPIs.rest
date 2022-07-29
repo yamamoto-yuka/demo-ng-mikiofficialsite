@@ -22,3 +22,30 @@ Content-Type: application/json
   "content":"testtest"
   }
 }
+
+
+###
+GET https://cms.yukayamamoto.me/api/banners?populate=deep
+
+###
+GET https://cms.yukayamamoto.me/api/homeliveinfo
+
+###
+GET https://cms.yukayamamoto.me/api/lives?populate=deep
+
+###
+GET https://cms.yukayamamoto.me/api/discographies?populate=deep
+
+###
+POST https://cms.yukayamamoto.me/api/contacts
+Content-Type: application/json
+
+{
+  "data":
+  {
+  "name":"test",
+  "email":"test@c.com",
+  "subject":"test",
+  "content":"testtest"
+  }
+}

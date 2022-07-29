@@ -1,22 +1,24 @@
 export interface Homebanner {
   id: number;
   attributes: {
-    alt: string;
-    url: string;
+    Title: string;
+    Description: string;
+    SiteURL: string;
     img: {
       data: [
         {
           attributes: {
-            formats: {
-              large: {
-                url: string;
-              };
-            };
+            alternativeText: string;
+            url: string;
           };
         }
       ];
     };
   };
+}
+
+export interface Homebanners {
+  data: Homebanner[];
 }
 
 export interface Homelive {
@@ -25,7 +27,6 @@ export interface Homelive {
     data: string;
     title: string;
     desc: string;
-    btnname: string;
   };
 }
 
@@ -40,16 +41,17 @@ export interface Discography {
       data: [
         {
           attributes: {
-            formats: {
-              large: {
-                url: string;
-              };
-            };
+            alternativeText: string;
+            url: string;
           };
         }
       ];
     };
   };
+}
+
+export interface Discographys {
+  data:Discography[]
 }
 
 export interface Liveinfo {
@@ -60,22 +62,22 @@ export interface Liveinfo {
     title: string;
     time: string;
     price: string;
-    linkname: string;
-    link: any;
+    link: string;
     img: {
       data: [
         {
           attributes: {
-            formats: {
-              large: {
-                url: string;
-              };
-            };
+            url: string;
+            alternativeText: string;
           };
         }
       ];
     };
   };
+}
+
+export interface Liveinfos {
+  data: Liveinfo[];
 }
 
 export interface Contact {

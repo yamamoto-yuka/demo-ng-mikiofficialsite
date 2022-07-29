@@ -10,9 +10,12 @@ export class LoadingComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    const loading = this.loading.nativeElement;
-    window.onload = function () {
-      loading.classList.add('loaded');
-    };
   }
+
+  ngAfterViewInit(){
+    setTimeout(()=>{
+    const loading = this.loading.nativeElement;
+    loading.classList.add('loaded');
+  }, 4000);
+ }
 }

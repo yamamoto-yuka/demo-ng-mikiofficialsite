@@ -1,4 +1,4 @@
-<!-- <loading></loading> -->
+<loading></loading>
 <app-header></app-header>
 <div #container class="container">
   <div id="herocarousel" class="carousel slide" data-bs-ride="true">
@@ -25,46 +25,33 @@
       ></button>
     </div>
     <div class="carousel-inner">
-
-      <div class="carousel-item active">
+      <div
+        *ngFor="let banner of banners; let i = index"
+        [class.active]="i === 0"
+        class="carousel-item"
+      >
         <div class="carousel-item-wrap">
           <div class="cta-wrap">
-            <h1 class="cta-title">美稀です！<br />インスタ始めました！</h1>
-            <p class="cta-desc">まだまだ不慣れだけど続けられるように頑張る！</p>
+            <h1 class="cta-title">{{ banner.attributes.Title }}</h1>
+            <p class="cta-desc">{{ banner.attributes.Description }}</p>
             <div class="btn-wrap">
-              <a href="#" class="cta-button">もっと見る！</a>
+              <a
+                [href]="banner.attributes.SiteURL"
+                target="_blank"
+                class="cta-button"
+                >詳細を見る！</a
+              >
             </div>
           </div>
           <div class="img-wrap">
             <img
-              src="../../assets/bio/MikiPrasonicaLiveImage.png"
+              [src]="banner.attributes.img.data[0].attributes.url"
               class="d-block w-100"
-              alt="..."
+              [alt]="banner.attributes.img.data[0].attributes.alternativeText"
             />
           </div>
         </div>
       </div>
-
-
-      <div class="carousel-item">
-        <div class="carousel-item-wrap">
-          <div class="cta-wrap">
-            <h1 class="cta-title">美稀です！<br />インスタ始めました！</h1>
-            <p class="cta-desc">まだまだ不慣れだけど続けられるように頑張る！</p>
-            <div class="btn-wrap">
-              <a href="#" class="cta-button">もっと見る！</a>
-            </div>
-          </div>
-          <div class="img-wrap">
-            <img
-              src="../../assets/bio/MikiPrasonicaLiveImage.png"
-              class="d-block w-100"
-              alt="..."
-            />
-          </div>
-        </div>
-      </div>
-
     </div>
     <button
       class="carousel-control-prev"
@@ -86,16 +73,26 @@
     </button>
   </div>
 
-  <div #live class="home-liveinfo">
+  <div
+    #live
+    class="home-liveinfo"
+    inViewport
+    [inViewportOptions]="{ threshold: [0] }"
+    (inViewportAction)="onIntersection($event)"
+  >
     <h2 class="headline">Live</h2>
     <div class="live-wrap">
-      <p class="live-date">{{ liveinfo.date }}</p>
-      <h3 class="live-title">{{ liveinfo.title }}</h3>
-      <p class="live-desc">{{ liveinfo.desc }}</p>
+      <p class="live-date">{{ liveinfo.attributes.data }}</p>
+      <h3 class="live-title">{{ liveinfo.attributes.title }}</h3>
+      <p class="live-desc">{{ liveinfo.attributes.desc }}</p>
     </div>
   </div>
-  <div class="video">
-    <h2 #videoHeadline class="headline">Video</h2>
+  <div class="video"
+  inViewport
+  [inViewportOptions]="{ threshold: [0] }"
+  (inViewportAction)="onIntersection($event)">
+    <h2 
+    class="headline">Video</h2>
     <div class="wrapper">
       <div #firstVideo class="videoContainer">
         <div>

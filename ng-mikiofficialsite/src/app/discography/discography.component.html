@@ -11,14 +11,14 @@
       <div class="disc-cover">
         <img
           [src]="
-            discography.cover
+            discography.attributes.img.data[0].attributes.url
           "
         />
         <div class="mask">
           <div class="caption">
-            <p>{{ discography.type }}</p>
-            <h3>{{ discography.title }}</h3>
-            <a [href]="discography.url" target="_blank"
+            <p>{{ discography.attributes.type }}</p>
+            <h3>{{ discography.attributes.title }}</h3>
+            <a [href]="discography.attributes.url" target="_blank"
               ><i class="fa-solid fa-circle-arrow-right"></i> EGGSで聴く</a
             >
           </div>

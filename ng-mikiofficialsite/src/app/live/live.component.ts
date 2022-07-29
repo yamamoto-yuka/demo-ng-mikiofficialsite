@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
+import { Liveinfo } from '../interfaces/interface';
 import { CommonService } from '../services/common.service';
 
 @Component({
@@ -11,8 +12,7 @@ export class LiveComponent implements OnInit {
   liveBg: string = '../../assets/footer/live_bg.png';
   @ViewChild('liveContainer', { static: true })
   liveContainer: ElementRef<HTMLDivElement>;
-  liveInfo: any[] = [];
-  host = 'http://localhost:1337';
+  liveInfo: Liveinfo[] = [];
 
   constructor(private cs: CommonService) {}
 
@@ -28,9 +28,8 @@ export class LiveComponent implements OnInit {
 
   ngOnInit(): void {
     this.animation();
-    this.cs.getliveinfo().subscribe((liveData) => {
-      console.log(liveData);
-      this.liveInfo = liveData.data;
+    this.cs.getliveinfo().subscribe(res => {
+      this.liveInfo = res.data;
     });
   }
 }

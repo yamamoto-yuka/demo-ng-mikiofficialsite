@@ -22,11 +22,9 @@ export class ContactComponent implements OnInit {
     }
   }
 
-
   submit(name:any, email:any, subject:any, content:any){
-    this.cs.postContact(this.name, this.email, this.subject, this.content).subscribe(contactData =>{
-
-      if(contactData.data){
+    this.cs.postContact(this.name, this.email, this.subject, this.content).subscribe(res =>{
+      if(res.data){
         this.router.navigate(['/confirm']);
       }
     })

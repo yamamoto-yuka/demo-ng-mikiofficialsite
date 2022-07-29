@@ -5,20 +5,18 @@
     <div *ngFor="let live of liveInfo | reverse" class="liveContainer">
       <div class="live-banner">
         <img
-          [src]="
-            host + live.attributes.img.data[0].attributes.formats.large.url
-          "
+          [src]="live.attributes.img.data[0].attributes.url"
           [alt]="live.alt"
         />
       </div>
       <div class="live-info">
-        <h3>{{ live.attributes.date }}</h3>
-        <p class="title">{{ live.attributes.title }}</p>
+        <p class="date">{{ live.attributes.date }}</p>
+        <h3 class="title">{{ live.attributes.title }}</h3>
         <p class="time">{{ live.attributes.time }}</p>
         <p class="price">{{ live.attributes.price }}</p>
       </div>
       <div class="link">
-        <a class="link-btn" href="{{ live.attributes.link }}">詳細を見る</a>
+        <a class="link-btn" target="_blank" [href]="live.attributes.link">詳細を見る</a>
       </div>
     </div>
   </div>
